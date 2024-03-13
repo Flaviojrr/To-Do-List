@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:id="@+id/Layout">
+
+    <EditText
+        android:id="@+id/editTextNovaTarefa"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:hint="@string/novaTarefa"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="4dp"
+        android:lines="1"/>
+
+    <Button
+        android:id="@+id/novaTarefa"
+        android:layout_width="130dp"
+        android:layout_height="40dp"
+        android:text="@string/novaTarefa"
+        android:textSize="15dp"
+        android:backgroundTint="@color/red"
+        app:layout_constraintEnd_toStartOf="@+id/deleteTask"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editTextNovaTarefa"
+        app:layout_constraintVertical_bias="0.086"
+        tools:ignore="MissingConstraints" />
+    <Button
+        android:id="@+id/deleteTask"
+        android:layout_width="130dp"
+        android:layout_height="40dp"
+        android:backgroundTint="@color/red"
+        android:textSize="15dp"
+        android:text="@string/TextDeleteTask"
+        app:layout_constraintStart_toEndOf="@+id/novaTarefa"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNovaTarefa"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewTarefa"
+        android:layout_width="150dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:text="@string/textTarefas"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/radioGroupTarefas"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/novaTarefa"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="MissingConstraints,NotSibling" />
+
+    <ScrollView
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTarefa">
+
+        <RadioGroup
+            android:id="@+id/radioGroupTarefas"
+            android:layout_width="300dp"
+            android:layout_height="400dp"
+            android:background="@drawable/square_edges"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewTarefa"
+            app:layout_constraintVertical_bias="0.689"
+            tools:ignore="MissingConstraints" />
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
