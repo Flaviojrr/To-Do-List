@@ -28,8 +28,8 @@ class MainActivity : AppCompatActivity() {
         val novaTarefaBotao = findViewById<Button>(R.id.novaTarefa)
         val deleteTask = findViewById<Button>(R.id.deleteTask)
         novaTarefaBotao.setOnClickListener{
-            if(tarefa.text.toString().equals(null)){
-                Log.d("teste","lalala")
+            if(tarefa.text.toString().length==0){
+                Log.d("Add new task","null")
             }else{
                 tarefaNome = tarefa.text.toString()
                 ToDoList().AddTask(tarefaNome)
@@ -40,8 +40,12 @@ class MainActivity : AppCompatActivity() {
             }
         }
         deleteTask.setOnClickListener{
-
-            //ToDoList().DeleleTask(radioGroupTarefas)
+            for (i in 0..radioGroupTarefas.childCount){
+                var checkboxteste = radioGroupTarefas.getChildAt(i)
+                if (checkboxteste is CheckBox && checkboxteste.isChecked){
+                    radioGroupTarefas.removeView(checkboxteste)
+                }
+            }
         }
     }
 }
