@@ -4,28 +4,34 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@color/white"
     android:layout_height="match_parent">
 
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".MainActivity"
     android:id="@+id/Layout">
 
     <EditText
         android:id="@+id/editTextNovaTarefa"
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="100dp"
+        android:background="@drawable/square_edges"
+        android:gravity="center"
         android:hint="@string/novaTarefa"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="4dp"
-        android:lines="1"/>
+        android:lines="1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/novaTarefa"
         android:layout_width="130dp"
         android:layout_height="40dp"
+        android:layout_marginTop="15dp"
         android:text="@string/novaTarefa"
         android:textSize="15dp"
         android:backgroundTint="@color/red"
@@ -39,6 +45,7 @@
         android:id="@+id/deleteTask"
         android:layout_width="130dp"
         android:layout_height="40dp"
+        android:layout_marginTop="15dp"
         android:backgroundTint="@color/red"
         android:textSize="15dp"
         android:text="@string/TextDeleteTask"
