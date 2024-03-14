@@ -4,6 +4,7 @@ import android.app.Dialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Layout
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.Button
@@ -28,7 +29,7 @@ class MainActivity : AppCompatActivity() {
         val deleteTask = findViewById<Button>(R.id.deleteTask)
         novaTarefaBotao.setOnClickListener{
             if(tarefa.text.toString().equals(null)){
-                print("lalala")
+                Log.d("teste","lalala")
             }else{
                 tarefaNome = tarefa.text.toString()
                 ToDoList().AddTask(tarefaNome)
