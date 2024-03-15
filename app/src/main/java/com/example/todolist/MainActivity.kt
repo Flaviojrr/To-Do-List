@@ -1,5 +1,6 @@
 package com.example.todolist
 
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -24,7 +25,7 @@ class MainActivity : AppCompatActivity() {
                 Log.d("Add new task","null")
             }else{
                 taskName = taskEditText.text.toString()
-                ToDoList().AddTask(taskName)
+                ToDoList.OnlyInstance.AddTask(taskName)
                 newTaskCheckBox = CheckBox(this)
                 newTaskCheckBox.text = taskName
                 radioGroupTasks.addView(newTaskCheckBox)
@@ -32,12 +33,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
         deleteTask.setOnClickListener{
-            for (i in 0..radioGroupTasks.childCount){
-                var checkboxteste = radioGroupTasks.getChildAt(i)
-                if (checkboxteste is CheckBox && checkboxteste.isChecked){
-                    radioGroupTasks.removeView(checkboxteste)
-                }
-            }
+            ToDoList.OnlyInstance.DeleteTask(radioGroupTasks)
         }
     }
 }
